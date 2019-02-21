@@ -1,0 +1,237 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+    background-color:#f9f8f8 !important;
+}
+nav {
+    background-color: #333!important;
+}
+.logo {
+	height: 75px;
+}
+
+.white {
+	color: white;
+}
+
+.grey{
+	color:grey;
+}
+
+#tecnologie {
+	margin-left:0px; 
+}
+
+.caricamento{
+	color: #dd3333;
+	font-size: 36px !important;
+	justify-content: center;
+	margin-left: 50%;
+	margin-top: 15%;
+}
+
+.center-all {
+	height: 100px;
+	margin: -8px;
+}
+
+.contenitore {
+	width: 100%;
+}
+
+.left {
+	width: 80%;
+	float: left;
+}
+
+.right {
+	width: 20%;
+	float: left;
+}
+
+.navbar {
+	margin-bottom: 1%;
+	min-height: 9vh;
+}
+
+
+
+h2 {
+	text-align: center !important;
+	
+}
+
+.filtro {
+	margin-left: 0 !important;
+}
+
+.margin-3 {
+	margin-bottom: 10px !important;
+}
+
+.padding-header {
+	padding: 10px 85px !important;
+}
+
+.padding-card {
+	padding: 0 !important;
+}
+
+#changePadding{
+	margin-bottom:3%;
+}
+
+.row {
+	margin-left: 0 !important;
+	
+}
+
+#row2{
+	    display: block;
+}
+.row-right {
+	text-align: right !important;
+}
+
+
+
+#tecnologia_tagsinput {
+	margin-left: 0 !important;
+	width: 100% !important;
+	border-radius: .25rem;
+}
+
+.form-control {
+	margin-left: 0 !important;
+	
+}
+
+.input-group-addon {
+	margin-left: 0 !important;
+}
+
+
+
+.canvasjs-chart-credit {
+	visibility: hidden;
+}
+
+/* Stili per login */
+.logo-small {
+	width: 10%;
+	height: 10%;
+}
+
+.vertical-center-container-fluid {
+	min-height: 100%;
+	min-height: 80vh;
+	display: flex;
+	align-items: center;
+}
+/* Lenti di ingrandimento per fare la search*/
+#lente {
+	font-size: larger;
+}
+.btn-outline-success:hover{
+	background-color: gray !important;
+	color:white !important;
+	border:gray important;
+}
+.btn-outline-success{
+	color: gray !important;
+	border-color:gray !important;
+	margin-left: 1%;
+}
+
+.logout:hover{
+	color:red !important;
+}
+
+
+
+#search{
+	text-align: center;
+}
+#lente:hover{
+	color:white;
+}
+#blocco-lente {
+	color: green;
+}
+
+/* Fine stili per login */
+
+/* Utilities */
+.w-35 {
+	width: 35% !important;
+}
+/* Fine Utilities */
+.container-fluid {
+	width: 100%;
+}
+.margine-card-left {
+	margin-left: 2.5% !important;
+}
+
+
+
+.pointer {
+	cursor: pointer;
+}
+
+.container-fluid-width {
+	min-width: 800px;
+}
+
+.container-fluid-loginwidth {
+	min-width: 500px;
+}
+
+/* Filtri */
+
+.dimension{
+	margin-top:5% !important;
+	max-height: 80vh;
+}
+
+#tabellaDipendenti{
+	overflow-x: scroll;
+    display: inline;
+    text-align: center;
+    
+}
+
+.form-group {
+	margin-bottom: 0% !important;
+}
+
+.spazio-row{
+	margin-bottom:10% !important;
+}
+
+.overflow-y-scroll{
+    overflow-y: auto;
+}
+
+.overflow-x-scroll{
+    overflow-x: auto;
+}
+/* fine Filtri */
+
+.header-icon {
+	margin-bottom: .5rem;	
+}
+
+.col-0 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 0%;
+}
+
+.drawer-animation {
+	transition: all .3s ease;
+}
+
+.max-viewport-height {
+	max-height: 79vh;
+}
+

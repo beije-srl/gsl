@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<mvc:annotation-driven />
+	<context:component-scan base-package="it.beije.gsl" />
+	<tx:annotation-driven />
+
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hikariConfig" />
+	</bean>
+
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<!-- <property name="jdbcUrl" value="jdbc:mysql://eu-cdbr-west-02.cleardb.net:3306/heroku_6e441a51d1420a8" />
+		<property name="username" value="bbee459b8f4114" />
+		<property name="password" value="9574b65e" /> -->
+		<property name="jdbcUrl" value="jdbc:mysql://192.168.1.108:3306/heroku_6e441a51d1420a8" />
+		<property name="username" value="beijegsl" />
+		<property name="password" value="beijegsl" />
+		<property name="maximumPoolSize" value="2" />
+		<property name="maxLifetime" value="10000" />
+		<property name="idleTimeout" value="10000" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>it/beije/gsl/dao/model/mapping/Azienda.hbm.xml</value>
+				<value>it/beije/gsl/dao/model/mapping/TipoAzienda.hbm.xml</value>
+				<value>it/beije/gsl/dao/model/mapping/Opportunita.hbm.xml</value>
+				<value>it/beije/gsl/dao/model/mapping/TipoContratto.hbm.xml</value>
+				<value>it/beije/gsl/dao/model/mapping/Dipendente.hbm.xml</value>
+				<value>it/beije/gsl/dao/model/mapping/Tecnologia.hbm.xml</value>
+				<value>it/beije/gsl/dao/model/mapping/FiguraProfessionale.hbm.xml
+				</value>
+				<!-- <value>it/beije/gsl/dao/model/mapping/File.hbm.xml</value> -->
+				<value>it/beije/gsl/dao/model/mapping/StatoAzienda.hbm.xml</value>
+				<value>it/beije/gsl/dao/model/mapping/StatoOpportunita.hbm.xml
+				</value>
+				<value>it/beije/gsl/dao/model/mapping/TerminiPagamento.hbm.xml
+				</value>
+				<value>it/beije/gsl/dao/model/mapping/User.hbm.xml</value>
+				<!-- <value>it/beije/gsl/dao/model/mapping/Tags.hbm.xml</value> -->
+				<!-- <value>it/beije/gsl/dao/model/mapping/Files.hbm.xml</value> -->
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

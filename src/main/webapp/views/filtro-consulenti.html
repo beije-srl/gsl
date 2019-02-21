@@ -1,0 +1,177 @@
+<div>
+
+	<div class="form-group under">
+		<h5 class="align-baseline">Tecnologie</h5>
+		<tags-input ng-model="$parent.tecnologie" on-tag-added="change()" on-tag-removed="change()" ></tags-input> <br>
+	</div>
+	</header>
+	<div id="dw-p1" class="bmd-layout-drawer bg-faded" data-ng-hide="nascondiFiltro">
+		<!-- <div>
+            <div class="row-right" id="tecnologie">
+                Tecnologie <input id="tecnologia" type="text" value="" data-role="tagsinput" placeholder="Add tags" data-ng-blur="change()" data-ng-model="tecnologie"/>
+            </div> -->
+
+		<div class="form-group">
+			<h5 class="align-baseline">Tag</h5>
+			<input id="tag" class="form-control" data-ng-model="tag"
+				   data-ng-change="change()" type="text" name="tag"> <br>
+		</div>
+
+		<div class="form-group">
+			<h5 class="align-baseline">Figura Professionale</h5>
+			<input data-ng-model="figuraProfessionale" id="figuraProfessionale"
+				   class="form-control" data-ng-change="change()" type="text"
+				   name="figuraProfessionale"> <br>
+		</div>
+
+		<div class="form-group">
+			<h5 class="align-baseline">Seniority</h5>
+			<input id="seniority" class="form-control" data-ng-model="seniority"
+				   data-ng-change="change()" type="text" name="seniority"> <br>
+		</div>
+
+		<div class="form-group">
+			<h5 class="align-baseline">Area</h5>
+			<input id="area" class="form-control" data-ng-model="area"
+				   data-ng-change="change()" type="text" name="area"> <br>
+		</div>
+
+		<div class="form-group">
+			<h5 class="align-baseline">Tipo Collaborazione</h5>
+			<input id="tipoCollaborazione" class="form-control"
+				   data-ng-model="tipoCollaborazione" data-ng-change="change()"
+				   type="text" name="tipoCollaborazione"> <br>
+		</div>
+
+		<div class="form-group">
+			<h5 class="align-baseline">Stato Attuale</h5>
+			<input id="statoAttuale" class="form-control"
+				   data-ng-model="statoAttuale" data-ng-change="change()" type="text"
+				   name="statoAttuale"> <br>
+		</div>
+
+		<div class="form-group">
+			<h5 class="align-baseline">Fonte</h5>
+			<input id="fonte" class="form-control" data-ng-model="fonte"
+				   data-ng-change="change()" type="text" name="fonte"> <br>
+		</div>
+
+		<div class="form-group">
+			<h5 class="align-baseline">Voto Colloquio</h5>
+			<input id="votoColloquio" class="form-control"
+				   data-ng-model="votoColloquio" data-ng-change="change()" type="text"
+				   name="votoColloquio"> <br>
+		</div>
+
+		<div class="row">
+			<h5 class="align-baseline testo">Data Creazione</h5>
+			<hr>
+		</div>
+
+		<div class="row">
+			<div class="filtro">
+				<div class="input-group-prepend">
+					<div class="input-group-text">Da</div>
+					<input class="form-control" type="date"
+						   data-ng-model="fromDataCreazione" data-ng-change="change()">
+				</div>
+			</div>
+			<div class="filtro">
+				<div class="input-group-prepend">
+					<div class="input-group-text">&nbspA&nbsp</div>
+					<input class="form-control" type="date"
+						   data-ng-model="toDataCreazione" data-ng-change="change()">
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<h5 class="align-baseline testo">Data Ultima Modifica</h5>
+			<hr>
+		</div>
+
+		<div class="row">
+			<div class="filtro">
+				<div class="input-group-prepend">
+					<div class="input-group-text">Da</div>
+					<input class="form-control" type="date"
+						   data-ng-model="fromDataUltimaModifica" data-ng-change="change()">
+				</div>
+			</div>
+			<div class="filtro">
+				<div class="input-group-prepend">
+					<div class="input-group-text">&nbspA&nbsp</div>
+					<input class="form-control" type="date"
+						   data-ng-model="toDataUltimaModifica" data-ng-change="change()">
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<h5 class="align-baseline testo">Data Nascita</h5>
+			<hr>
+		</div>
+
+		<div class="row">
+			<div class="filtro">
+				<div class="input-group-prepend">
+					<div class="input-group-text">Da</div>
+					<input class="form-control" type="date"
+						   data-ng-model="fromDataNascita" data-ng-change="change()">
+				</div>
+			</div>
+			<div class="filtro">
+				<div class="input-group-prepend">
+					<div class="input-group-text">&nbspA&nbsp</div>
+					<input class="form-control" type="date"
+						   data-ng-model="toDataNascita" data-ng-change="change()">
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<h5 class="align-baseline testo">Data Ultimo Contatto</h5>
+			<hr>
+		</div>
+
+		<div class="row">
+			<div class="filtro">
+				<div class="input-group-prepend">
+					<div class="input-group-text">Da</div>
+					<input class="form-control" type="date"
+						   data-ng-model="fromDataUltimoContratto" data-ng-change="change()">
+				</div>
+			</div>
+			<div class="filtro">
+				<div class="input-group-prepend">
+					<div class="input-group-text">&nbspA&nbsp</div>
+					<input class="form-control" type="date"
+						   data-ng-model="toDataUltimoContratto" data-ng-change="change()">
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<h5 class="align-baseline testo">Data Colloquio</h5>
+			<hr>
+		</div>
+
+		<div class="row">
+			<div class="filtro">
+				<div class="input-group-prepend">
+					<div class="input-group-text" id="inputGroup-sizing-default">Da</div>
+					<input class="form-control" type="date"
+						   data-ng-model="fromDataColloquio" data-ng-change="change()">
+				</div>
+			</div>
+			<div class="filtro">
+				<div class="input-group-prepend">
+					<div class="input-group-text" id="inputGroup-sizing-default">&nbspA&nbsp</div>
+					<input class="form-control" type="date"
+						   data-ng-model="toDataColloquio" data-ng-change="change()">
+				</div>
+			</div>
+		</div>
+
+
+	</div>

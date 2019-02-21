@@ -1,0 +1,43 @@
+<nav
+	class="navbar navbar-expand-md navbar-collapse-sm"
+	data-ng-controller="navbarController">
+	<!-- Logo -->
+	<div class="navbar-header col-sm-12 col-md-2 text-center">
+		<img alt="Logo" src="img/logo.png" class="logo  pointer"
+			data-ng-click="goToDashboard()" role="button">
+	</div>
+
+	<!-- Menu buttons -->
+	<div class="navbar-nav col-sm-12 col-md-6 col-lg-5 text-center"
+		data-ng-show="userLoggedIn">
+		<a class="nav-item nav-link text-light" href="#!dipendenti">Dipendenti</a> <a
+			class="nav-item nav-link text-light" href="#!clienti">Clienti</a> <a
+			class="nav-item nav-link text-light" href="#!opportunita">Opportunit&agrave;</a>
+		<a class="nav-item nav-link text-light" href="#!presentazioni">Presentazioni</a>
+	</div>
+
+	<!-- Search bar -->
+	<div
+		class="input-group text-center col-sm-12 col-md-3 justify-content-center"
+		data-ng-show="userLoggedIn">
+		<input class="form-control py-2 border border-white" type="search"
+			placeholder="Scrivi per cercare..." id="example-search-input">
+		<span class="input-group-append">
+			<button class="btn .bg-white " type="button">
+				<i class="fa fa-search"></i>
+			</button>
+		</span>
+	</div>
+
+	<!-- Logout button -->
+	<div class="text-center col-sm-12 col-md-1 col-lg-2 text-light"
+		data-ng-show="userLoggedIn">
+		<span class="pointer logout" data-toggle="modal"
+			data-target="#model-logout" role="button"> <i
+			class="fa fa-sign-out inherit-color"></i> Logout
+		</span>
+
+	</div>
+
+	<div data-ng-include="'views/logout-modal.html'"></div>
+</nav>

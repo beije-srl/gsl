@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="it.beije.gsl.dao.model.User" table="USER">
+
+		<id name="email" type="string" column="EMAIL">
+		</id>
+		
+		<!-- <set name="authorities" cascade="save-update" table="user_authorities" lazy="true">
+			<key column="EMAIL" />
+			<many-to-many column="ID_AUTHORITIES" class="it.beije.gsl.dao.model.Authorities" />
+		</set>  -->
+	
+
+		<property name="password" column="PASSWORD" type="string" />
+		<property name="name" column="NAME" type="string" />
+		<property name="surname" column="SURNAME" type="string" />
+		<property name="creationTime" column="CREATION_DATE" type="LocalDateTime" />
+		<property name="updateTime" column="UPDATE_TIME" type="LocalDateTime" />
+		<property name="enabled" column="ENABLED" type="boolean" />
+	</class>
+
+</hibernate-mapping>

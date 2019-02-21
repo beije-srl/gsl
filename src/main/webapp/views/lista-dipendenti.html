@@ -1,0 +1,54 @@
+<div data-ng-controller="dipendentiController">
+	<div
+		class="row align-items-center text-center text-dark h2 header-icon">
+		<span id = "filters" class="col-1"> <i
+			class="fa fa-bars header-icon pointer border border-dark rounded p-2"
+			data-ng-click="showFiltri = !showFiltri"
+		></i>
+		</span> <span class="col-8 col-md-9"><i class="fa fa-users "></i>
+			Consulenti</span> <span class="col-3 col-md-2 pull-right"> <i
+			class="fa fa-user-plus pointer"> <i class="fa fa-refresh pointer"
+				data-ng-click="change()"></i></i>
+		</span>
+	</div>
+	<div class="row">
+		<div data-ng-include="'views/filtro-consulenti.html'"
+			class="overflow-y-scroll drawer-animation max-viewport-height"
+			data-ng-class="{'col-0': !showFiltri, 'col-md-4': showFiltri}"
+			onLoad="finishLoading()"></div>
+
+		<!-- TODO: Le colonne devono essere: NOMINATIVO, DATA ULTIMO CONTRATTO, FIGURA PROFESSIONALE, TECNOLOGIE, SENIORITY,
+	CITTà, DATA NASCITA, COSTO BEIJE, COTO COLLOQUIO  -->
+
+		<div class="overflow-x-scroll overflow-y-scroll drawer-animation"
+			data-ng-class="{'col-md-8': showFiltri, 'col-md-12': !showFiltri}">
+			<div class="table-responsive">
+				<table class="table-hover table" data-ng-hide="loading">
+					<thead class="thead-light">
+						<tr>
+							<th>Nome</th>
+							<th>Azienda</th>
+							<th>Tecnologie</th>
+							<th>Figura Professionale</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr data-ng-repeat="x in listaDipendenti">
+							<td data-ng-click="apriScheda(x.idDipendente)">{{ x.nome }}
+								{{ x.cognome }}</td>
+							<td data-ng-click="apriScheda(3)">Beije</td>
+							<td><span data-ng-repeat="y in x.tecnologie"><span
+									class="badge badge-pill" data-ng-style="assegnaColore(y.id)">
+										{{y.nome}} </span>&nbsp</span></td>
+							<td>{{ x.figuraProfessionale }}</td>
+						</tr>
+						<tr data-ng-if="(!listaDipendenti || listaDipendenti.length < 1)">
+							<td colspan="4" class="text-center">Nessun consulente disponibile con i filtri selezionati.</td>
+						</tr>
+					</tbody>
+				</table>
+				<loading></loading>
+			</div>
+		</div>
+	</div>
+</div>

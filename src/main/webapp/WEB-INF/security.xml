@@ -1,0 +1,38 @@
+<b:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:b="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http auto-config="true" entry-point-ref="entryPoint">
+		<intercept-url pattern="/rest/login" access="permitAll" />
+		<intercept-url pattern="/rest/dipendenti/**" access="isAuthenticated()" />
+		<intercept-url pattern="/rest/dashboard/**" access="isAuthenticated()" />
+		<intercept-url pattern="/rest/**" access="hasRole('ROLE_ADMIN')" />
+
+		<form-login login-processing-url="/rest/login"
+			authentication-success-handler-ref="authSuccessHandler"
+			authentication-failure-handler-ref="authFailureHandler" />
+		<!-- TODO: disabilitare cross-forgery -->
+		<csrf disabled="true" />
+		<logout logout-url="/rest/logout" />
+
+		<remember-me services-ref="rememberMeHandler" />
+	</http>
+
+	<authentication-manager>
+		<authentication-provider ref="authenticationProvider" />
+	</authentication-manager>
+
+	<b:bean id="authSuccessHandler" class="it.beije.gsl.security.AuthSuccessHandler" />
+	<b:bean id="authFailureHandler" class="it.beije.gsl.security.AuthFailureHandler" />
+	<b:bean id="authenticationProvider" class="it.beije.gsl.security.CustomAuthenticationProvider" />
+	<b:bean id="entryPoint" class="it.beije.gsl.security.RestAuthenticationEntryPoint" />
+	<b:bean id="rememberMeHandler" class="it.beije.gsl.security.RememberMeHandler">
+		<b:constructor-arg name="key" index="0" value="QejivQuPDt6lWHvhwC0q" />
+		<b:constructor-arg name="userDetailsService" index="1" ref="userDaoImpl" />
+	</b:bean>
+
+	<!-- Encryptor for password authentication -->
+	<b:bean id="passwordEncryptor" class="org.jasypt.util.password.BasicPasswordEncryptor" />
+
+</b:beans>

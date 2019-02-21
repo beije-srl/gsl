@@ -1,0 +1,53 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="it.beije.gsl.dao.model.Dipendente" table="DIPENDENTE">
+
+		<id name="idDipendente" type="int" column="ID_DIPENDENTE">
+			<generator class="increment" />
+		</id>
+
+		<set name="tecnologie" cascade="all" table="DIPENDENTE_TECNOLOGIA" lazy="true">
+			<key column="ID_DIPENDENTE" />
+			<many-to-many column = "ID_TECNOLOGIA" class="it.beije.gsl.dao.model.Tecnologia" />
+		</set>
+      
+		<property name="nome" column="NOME" type="string" />
+		<property name="cognome" column="COGNOME" type="string" />
+		<property name="dataContratto" column="DATA_CONTRATTO" type="date" />
+		<property name="dataColloquio" column="DATA_COLLOQUIO" type="date" />
+		<property name="figuraProfessionale" column="FIGURA_PROFESSIONALE" type="string" />
+		<property name="seniority" column="SENIORITY" type="int" />
+		<property name="opportunita" column="OPPORTUNITA" type="string" />
+		<property name="clienteAttuale" column="CLIENTE_ATTUALE" type="int" />
+		<property name="area" column="AREA" type="string" />
+		<property name="citta" column="CITTA" type="string" />
+		<property name="titoloStudio" column="TITOLO_STUDIO" type="string" />
+		<property name="note" column="NOTE" type="string" />
+		<property name="notePresentazione" column="NOTE_PRESENTAZIONE" type="string" />
+		<property name="dataNascita" column="DATA_NASCITA" type="date" />
+		<property name="noteDisponibilita" column="NOTE_DISPONIBILITA" type="string" />
+		<property name="noteRetribuzione" column="NOTE_RETRIBUZIONE" type="string" />
+		<property name="tipoCollaborazione" column="TIPO_COLLABORAZIONE" type="int" />
+		<property name="notaCosto" column="NOTA_COSTO" type="string" />
+		<property name="costo" column="COSTO" type="int" />
+		<property name="telefono" column="TELEFONO" type="string" />
+		<property name="mail" column="MAIL" type="string" />
+		<property name="skype" column="SKYPE" type="string" />
+		<property name="statoAttuale" column="STATO_ATTUALE" type="int" />
+		<property name="fonte" column="FONTE" type="string" />
+		<property name="noteFonte" column="NOTE_FONTE" type="string" />
+		<property name="valutazioneHr" column="VALUTAZIONE_HR" type="string" />
+		<property name="valutazioneTecnica" column="VALUTAZIONE_TECNICA" type="string" />
+		<property name="intervistatore" column="INTERVISTATORE" type="string" />
+		<property name="sedeColloquio" column="SEDE_COLLOQUIO" type="string" />
+		<property name="files" column="FILES" type="int" />
+		<property name="tags" column="TAGS" type="int" />
+
+	</class>
+	
+</hibernate-mapping>

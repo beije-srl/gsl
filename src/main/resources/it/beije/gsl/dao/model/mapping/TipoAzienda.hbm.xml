@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="it.beije.gsl.dao.model.TipoAzienda" table="TIPO_AZIENDA">
+
+		<id name="id" type="int" column="ID_TIPO_AZIENDA">
+			<generator class="increment" />
+		</id>
+
+		<property name="nome" column="NOME" type="string" />
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,52 @@
+<div ng-controller="contratti" class="bg-transparent text-dark ">
+
+	<h3 class="card-header text-white text-center" style="background-color: #333;     font-weight: normal;">
+		 Contratti in Scadenza 
+	</h2>
+
+	<div class="row data-responsive-accordion-tabs accordion medium-tabs large-accordion" style="width: 100%;">
+
+		<div id="accordion" style="margin:auto;    width: 100%; ">
+			<div class="card bg-transparent">
+				<div class="card-header padding-header  bg-white " id="headingOne">
+					<h5 class="text-center">
+						<button class="btn btn-link collapsed text-dark" data-toggle="collapse"
+							data-target="#collapseOne" aria-expanded="true"
+							aria-controls="collapseOne">GIUGNO</button>
+					</h5>
+				</div>
+				<div id="collapseOne" class="collapse show"
+					aria-labelledby="headingOne" data-parent="#accordion">
+					<div class="card-body list-group-flush list-group padding-card text-dark">
+						<a class="list-group-item small" ng-click="apriContratto()">
+							Contratto 1</a> <a class="list-group-item small"
+							ng-click="apriContratto()"> Contratto 2</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="card bg-transparent">
+				<div class="card-header padding-header   bg-white " id="headingTwo">
+					<h5 class="text-center">
+						<button class="btn btn-link collapsed text-dark" data-toggle="collapse"
+							data-target="#collapseTwo" aria-expanded="false"
+							aria-controls="collapseTwo">LUGLIO</button>
+					</h5>
+				</div>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordion">
+					<div class="card-body list-group-flush list-group padding-card text-dark">
+						<a class="list-group-item small" ng-click="apriContratto()">
+							Contratto 1</a> <a class="list-group-item small"
+							ng-click="apriContratto()"> Contratto 2</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+
+

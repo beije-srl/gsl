@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="it.beije.gsl.dao.model.Opportunita" table="OPPORTUNITA">
+
+		<id name="id" type="int" column="ID_OPPORTUNITA">
+			<generator class="increment" />
+		</id>
+		
+		<property name="titolo" column="TITOLO" type="string" />
+		<property name="numeroRisorse" column="NUMERO_RISORSE" type="int" />
+		<property name="figuraProfessionale" column="FIGURA_PROFESSIONALE" type="int" />
+		<property name="tipoConsulente" column="TIPO_CONSULENTE" type="int" />
+		<property name="tecnologie" column="TECNOLOGIE" type="int" />
+		<property name="descrizione" column="DESCRIZIONE" type="string" />
+		<property name="citta" column="CITTA" type="string" />
+		<property name="durata" column="DURATA" type="int" />
+		<property name="dataRichiesta" column="DATA_RICHIESTA" type="date" />
+		<property name="costoMassimo" column="COSTO_MASSIMO" type="int" />
+		<property name="clienteFinale" column="CLIENTE_FINALE" type="string" />
+		<property name="gestoreAzienda" column="GESTORE_AZIENDA" type="string" />
+		<property name="statoAttivita" column="STATO_ATTIVITA" type="int" />
+		<property name="priorita" column="PRIORITA" type="int" />
+		
+		<many-to-one name="tipoContratto" column="TIPO_CONTRATTO" class="it.beije.gsl.dao.model.TipoContratto"></many-to-one>
+
+	</class>
+
+</hibernate-mapping>

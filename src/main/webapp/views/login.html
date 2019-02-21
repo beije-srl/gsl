@@ -1,0 +1,54 @@
+<div data-ng-controller="loginController"
+	class="vertical-center-container-fluid justify-content-center container-fluid-loginwidth">
+	<div class="card w-35">
+		<div class="card-header">
+			<img class="logo-small" src="img/logo-no-name.png" alt="Logo">
+			&nbsp;
+			<h4 class="d-inline align-middle">Login</h4>
+		</div>
+
+		<form name="formLogin" class="p-3" novalidate>
+
+			<!-- Email -->
+			<div class="row input-group mb-2 mr-sm-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+						<i class="fa fa-envelope fa-fw"></i>
+					</div>
+				</div>
+				<input type="email" class="form-control" id="email"
+					placeholder="Email" name="email" data-ng-model="email" required>
+			</div>
+
+			<!-- Password -->
+			<div class="row input-group mb-2 mr-sm-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text">
+						<i class="fa fa-lock fa-fw"></i>
+					</div>
+				</div>
+				<input type="password" class="form-control" id="pwd"
+					placeholder="Password" name="pwd" data-ng-model="pwd" required>
+			</div>
+			
+			<!-- Remember Me -->
+			<div class="row form-check">
+				<input type="checkbox" class="form-check-input" id="remember-me"
+					name="remember-me" data-ng-model="rememberMe"> 
+				<label class="form-check-label" for="remember-me">Ricordami su questo PC</label>
+			</div>
+
+			<!-- Error Message -->
+			<div class="row">
+				<p data-ng-show="loginError" class="text-danger">Username o
+					password errati.</p>
+			</div>
+
+			<!-- Submit -->
+			<div class="clearfix float-right">
+				<button type="button" class="btn btn-danger" id="myBtn"
+					data-ng-disabled="formLogin.$invalid" data-ng-click="doLogin()">Login</button>
+			</div>
+		</form>
+	</div>
+</div>

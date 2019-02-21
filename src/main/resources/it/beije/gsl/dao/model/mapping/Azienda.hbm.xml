@@ -1,0 +1,53 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="it.beije.gsl.dao.model.Azienda" table="AZIENDA">
+
+		<id name="idAzienda" type="int" column="ID_AZIENDA">
+			<generator class="assigned" />
+		</id>
+
+		<set name="opportunita" cascade="all" lazy="false">
+			<key column="AZIENDA" />
+			<one-to-many class="it.beije.gsl.dao.model.Opportunita" />
+		</set>
+
+		<set name="tipoAzienda" cascade="all" lazy="false">
+			<key column="ID" />
+			<one-to-many class="it.beije.gsl.dao.model.TipoAzienda" />
+		</set>
+
+		<bag name="partners" cascade="save-update" table="azienda_partner" lazy="true">
+			<key column="ID_AZIENDA" />
+			<many-to-many column="ID_PARTNER" class="it.beije.gsl.dao.model.Azienda" />
+		</bag>
+
+		<property name="nome" column="NOME" type="string" />
+		<property name="indirizzo" column="INDIRIZZO" type="string" />
+		<property name="citta" column="CITTA" type="string" />
+		<property name="regione" column="REGIONE" type="string" />
+		<property name="partitaIva" column="PARTITA_IVA" type="string" />
+		<property name="propositivo" column="PROPOSITIVO" type="boolean" />
+		<property name="subfornitura" column="SUBFORNITURA" type="boolean" />
+		<property name="consulentiPartita" column="CONSULENTI_PARTITA"
+			type="boolean" />
+		<property name="tecnologie" column="TECNOLOGIE" type="int" />
+		<property name="nomeReferente" column="NOME_REFERENTE" type="string" />
+		<property name="mailReferente" column="MAIL_REFERENTE" type="string" />
+		<property name="status" column="STATUS" type="int" />
+		<property name="terminiPagamenti" column="TERMINI_PAGAMENTI"
+			type="int" />
+		<property name="utenteInserimento" column="UTENTE_INSERIMENTO"
+			type="string" />
+		<property name="utenteUltimaModifica" column="UTENTE_ULTIMA_MODIFICA"
+			type="string" />
+		<property name="note" column="NOTE" type="string" />
+		<property name="files" column="FILES" type="int" />
+		<property name="tag" column="TAG" type="int" />
+		
+	</class>
+</hibernate-mapping>

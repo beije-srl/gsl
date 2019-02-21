@@ -1,0 +1,177 @@
+<div data-ng-controller="schedaDipendenteController">
+
+<br>
+	<div class="clearfix mb-3">
+		<form class="form-inline">
+			<div class="col-md-7">
+				<input type="text" class="form-control " id="nome" placeholder="Nome Consulente.." data-ng-model="dipendente.nome"> 
+				<input type="text" class="form-control " id="cognome" placeholder="Cognome Consulente" data-ng-model="dipendente.cognome">
+			</div>
+			<div class="col-md-5 d-flex flex-row-reverse ">
+
+				<div class="form-group px-5">
+					<div class="dropdown">
+						<div class="form-group">
+							<button type="button" class="btn dropdown-toggle px-2"
+								data-toggle="dropdown">Opzioni</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">Stampa</a> 
+								<a class="dropdown-item" href="#">Clona</a>
+								<a class="dropdown-item" href="#">Cancella</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary px-2 " ng-click="salvaModificheDipendente()">Salva Modifiche</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+
+	<br>
+	<div class="clearfix">
+		<nav class="nav nav-pills nav-fill nav-justify col-md-12 p-0">
+			<a class="nav-item nav-link active tab" href="#tab-1">Sintesi</a> <a
+				class="nav-item nav-link tab" href="#tab-2">Commerciale</a> <a
+				class="nav-item nav-link tab" href="#tab-3">Storico</a>
+		</nav>
+	</div>
+
+	<div class="tab-content border">
+		<div class="tab-pane fade show active" id="tab-1">
+			<form>
+				<div class="form-row">
+					<div class="form-group col-md-3">
+						<label for="id">ID</label> <input type="text"
+							class="form-control form-control-sm" id="id" readonly data-ng-model="dipendente.idDipendente">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="data_nascita">Data Nascita</label> <input type="date"
+							class="form-control form-control-sm" id="dataNascita"
+							placeholder="21/06/2018" data-ng-model="dipendente.dataNascita">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="titolo">Titolo di Studio</label> <input type="text"
+							class="form-control form-control-sm" id="titolo"
+							placeholder="Trennale" data-ng-model="dipendente.titoloStudio">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="figura">Figura Professionale</label> <input
+							type="text" class="form-control form-control-sm" id="figura"
+							placeholder="Sviluppatore" data-ng-model="dipendente.figuraProfessionale">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="tecnologie">Tecnologie</label> <input type="text"
+							class="form-control form-control-sm" id="tecnologie"
+							placeholder="Java, Angular, Bootstrap" data-ng-model="dipendente.tecnologie">
+					</div>
+
+					<div class="form-group col-md-3">
+						<label for="seniority">Seniority Level</label> <input type="text"
+							class="form-control form-control-sm" id="seniority"
+							placeholder="Junior" data-ng-model="dipendente.seniority">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="azienda">Azienda</label> <input type="text"
+							class="form-control form-control-sm" id="azienda"
+							placeholder="Beije Consulting">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-3">
+						<label for="email">Email</label> <input type="email"
+							class="form-control form-control-sm" id="email"
+							 data-ng-model="dipendente.mail">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="skype">Skype</label> <input type="text"
+							class="form-control form-control-sm" id="skype" data-ng-model="dipendente.skype">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="costo">Costo</label> <input type="number"
+							class="form-control form-control-sm" id="costo" data-ng-model="dipendente.costo">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="telefono ">Telephone</label> <input type="text"
+							class="form-control form-control-sm" id="telefono"
+							 data-ng-model="dipendente.telefono">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="note">Note</label>
+						<textarea class="form-control form-control-sm" id="note" rows="3"></textarea>
+					</div>
+				</div>
+			</form>
+
+		</div>
+		<div class="tab-pane fade" id="tab-2">
+			<form>
+				<div class="form-row">
+					<div class="form-group col-md-3">
+						<label for="data_contatto">Data Contratto</label> <input
+							type="date" class="form-control form-control-sm"
+							id="data_contatto" placeholder="21/06/2018" data-ng-model="dipendente.dataContratto">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="data_colloquio">Data Colloquio</label> <input
+							type="date" class="form-control form-control-sm"
+							id="data_colloquio" placeholder="21/06/2018" data-ng-model="dipendente.dataColloquio">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="presentation_note">Presentazione Note</label>
+						<textarea class="form-control form-control-sm"
+							id="presentation_note" rows="3"></textarea>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="presentation_disponibilita">Disponibilita Note</label>
+						<textarea class="form-control form-control-sm"
+							id="presentation_disponibilita" rows="3"></textarea>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="retribuzione_disponibilita">Retribuzione Note</label>
+						<textarea class="form-control form-control-sm"
+							id="retribuzione_disponibilita" rows="3"></textarea>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="costo_disponibilita">Costo Fonte Note</label>
+						<textarea class="form-control form-control-sm"
+							id="costo_disponibilita" rows="3"></textarea>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<div class="tab-pane fade" id="tab-3">
+		<table id="tabellaDipendenti" class="table-hover table"
+				data-ng-hide="nascondiTabella">
+				<thead class="thead-light">
+					<tr>
+						<th>Nome e Cognome</th>
+						<th>Azienda</th>
+						<th>Tecnologie</th>
+						<th>Figura Professionale</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-ng-repeat="x in listaDipendenti">
+						<td data-ng-click="apriScheda(x.idDipendente)">{{ x.nome }}</td>
+						<td data-ng-click="apriScheda(3)">{{ x.azienda }}</td>
+						<td>{{ x.tecnologie }}</td>
+						<td>{{ x.figuraProfessionale }}</td>
+					</tr>
+				</tbody>
+			</table>
+		
+		</div>
+	</div>
+</div>
